@@ -21,7 +21,7 @@ export default withAuth(
       //   for more information on what database might be appropriate for you
       //   see https://keystonejs.com/docs/guides/choosing-a-database#title
   provider: 'postgresql',
-  url: 'postgresql://postgres:admin@localhost:5432/keystone_db',
+  url: process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost:5555/keystone_db',
     },
     lists,
     session,

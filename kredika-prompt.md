@@ -12,4 +12,4 @@ L'objectif est de mettre à jour le fichier @schema.ts pour qu'il soit conforme 
 
 # Lancer Prisma Studio
 - npx prisma studio
--Prisma Studio is up on http://localhost:5555
+- Prisma Studio is up on http://localhost:5555
