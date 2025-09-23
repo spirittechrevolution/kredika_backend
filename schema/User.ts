@@ -15,7 +15,7 @@ const User = list({
     
     // Informations personnelles
     phone: text({
-      validation: { isRequired: true },
+      validation: { isRequired: false },
       isIndexed: 'unique',
     }),
     
