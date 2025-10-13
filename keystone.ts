@@ -17,11 +17,20 @@ import { withAuth, session } from './auth'
 export default withAuth(
   config({
     db: {
-      // we're using sqlite for the fastest startup experience
-      //   for more information on what database might be appropriate for you
-      //   see https://keystonejs.com/docs/guides/choosing-a-database#title
-  provider: 'postgresql',
-  url: process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost:5555/keystone_db',
+      provider: 'postgresql',
+      url: process.env.DATABASE_URL || 'postgresql://postgres:admin@localhost:5555/keystone_db',
+    },
+    server: {
+      port: 4000, // Port Keystone (adapter selon besoin)
+      cors: {
+        origin: [
+          'http://localhost:5173', // Port par défaut de Vite/Vue
+          'http://localhost:5174', // Port alternatif Vite/Vue
+          'http://localhost:8080', // Port classique Vue CLI
+          'http://localhost:3000', // Port de ton front actuel
+        ],
+        credentials: true,
+      },
     },
     lists,
     session,
