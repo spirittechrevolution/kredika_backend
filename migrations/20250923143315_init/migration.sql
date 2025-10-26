@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE "Order" ALTER COLUMN "orderNumber" SET DEFAULT 'KRD-2025-TK2AOU';
