@@ -41,6 +41,41 @@ We've put auth into its own file to make this humble starter easier to navigate.
 
 For more on auth, check out our [Authentication API Docs](https://keystonejs.com/docs/apis/auth#authentication-api)
 
+## Database Scripts
+
+This project includes several scripts for managing database data:
+
+### Available Scripts
+
+- `npm run seed` - Populate the database with sample data using Faker.js
+- `npm run clear` - Remove all data from the database (respects foreign key constraints)
+- `npm run reset` or `npm run db:reset` - Clear the database and then populate it with fresh data
+
+### Database Models
+
+The application includes the following main models:
+- **User** - System users (admin, seller, customer roles)
+- **Customer** - Customer profiles with credit history
+- **Seller** - Seller profiles with business information
+- **Product** - Products with pricing and credit options
+- **Order** - Customer orders with multiple payment methods
+- **OrderItem** - Individual items within orders
+- **CreditReservation** - Credit reservations for installment payments
+- **Installment** - Individual installment payments
+- **MobileTransaction** - Mobile money payment records
+- **Notification** - System notifications for customers
+- **PlatformSetting** - Platform configuration settings
+
+### Sample Data
+
+The seed script creates:
+- 1 Admin user
+- 3 Seller users with business profiles
+- 5 Customer users
+- 20+ Sample products across different categories
+- Sample orders with various payment methods
+- Platform settings for credit and payment configuration
+
 ### Adding a frontend
 
 As a Headless CMS, Keystone can be used with any frontend that uses GraphQL. It provides a GraphQL endpoint you can write queries against at `/api/graphql` (by default [http://localhost:3000/api/graphql](http://localhost:3000/api/graphql)). At Thinkmill, we tend to use [Next.js](https://nextjs.org/) and [Apollo GraphQL](https://www.apollographql.com/docs/react/get-started/) as our frontend and way to write queries, but if you have your own favourite, feel free to use it.
