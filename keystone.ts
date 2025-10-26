@@ -29,7 +29,7 @@ export default withAuth(
           'http://localhost:8080', // Port classique Vue CLI
           'http://localhost:3000', // Port de ton front actuel
         ],
-        credentials: true,
+        credentials: false,
       },
     },
     lists,

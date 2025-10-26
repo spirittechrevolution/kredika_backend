@@ -62,7 +62,7 @@ model Product {
 
 model Order {
   id                             String              @id @default(cuid())
-  orderNumber                    String              @unique @default("KRD-2025-V34C2X")
+  orderNumber                    String              @unique @default("KRD-2025-1B0II5")
   customer                       Customer?           @relation("Order_customer", fields: [customerId], references: [id])
   customerId                     String?             @map("customer")
   seller                         Seller?             @relation("Order_seller", fields: [sellerId], references: [id])
